@@ -1,0 +1,32 @@
+.cast {
+    display: block;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+}
+
+.poster {
+    width: 200px;
+    height: 300px;
+}
+
+.name {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}

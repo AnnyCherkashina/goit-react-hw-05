@@ -1,17 +1,8 @@
-.title {
-    font-size: 36px;
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.section {
-    padding: 20px;
-}
-
 .item {
     margin: 0;
     padding: 0;
     list-style: disc;
+
     font-size: 14px;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -25,4 +16,8 @@
     &:focus {
         color: blue;
     }
+}
+
+.movieList {
+    padding: 20px;
 }
