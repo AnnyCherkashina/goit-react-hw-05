@@ -4,10 +4,11 @@
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
+
 }
 
 .span {
-    color: blue;
+    color: rgb(249, 16, 168);
     font-size: 30px;
     font-weight: 700;
     line-height: 1.5;

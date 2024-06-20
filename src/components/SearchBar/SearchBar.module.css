@@ -21,7 +21,7 @@
 
     &:focus {
         outline: none;
-        border-color: blue;
+        border-color: rgb(235, 4, 143);
     }
 }
 

@@ -19,10 +19,10 @@
 
 .link {
     text-decoration: none;
-    color: black;
+    color: rgb(240, 166, 219);
 
     &:hover,
     &:focus {
-        color: blue;
+        color: rgb(245, 11, 136);
     }
 }

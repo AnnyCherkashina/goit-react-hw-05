@@ -23,5 +23,15 @@
 
 .link {
     text-decoration: none;
-    color: black;
+    color: rgb(243, 243, 243);
+}
+
+.link:hover {
+    color: rgb(221, 4, 124);
+
+}
+
+.link:focus {
+    color: rgb(221, 4, 124);
+
 }

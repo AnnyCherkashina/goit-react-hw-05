@@ -18,7 +18,7 @@
 .linkGoBack {
     display: block;
     text-decoration: none;
-    color: black;
+    color: rgb(245, 241, 241);
     font-size: 18px;
     font-weight: 500;
     line-height: 1.5;
@@ -27,7 +27,7 @@
 
     &:hover,
     &:focus {
-        color: blue;
+        color: rgb(227, 9, 129);
     }
 }
 
@@ -76,10 +76,10 @@
 
 .link {
     text-decoration: none;
-    color: black;
+    color: rgb(244, 242, 242);
 
     &:hover,
     &:focus {
-        color: blue;
+        color: rgb(234, 9, 136);
     }
 }

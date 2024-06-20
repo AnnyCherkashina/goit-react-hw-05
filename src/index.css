@@ -9,7 +9,7 @@
   align-items: center;
 
   color-scheme: light dark;
-  color: black;
+  color: rgb(238, 232, 232);
   background-color: white;
 
   font-synthesis: none;
@@ -54,16 +54,18 @@ body {
   margin: 0;
   width: 100%;
   padding-bottom: 20px;
+  background-color: rgb(53, 5, 42);
 }
 
 header {
   padding: 20px;
-  background-color: aquamarine;
+  background-color: rgb(121, 4, 59);
   width: 100%;
 }
 
 .active {
-  color: blue !important;
+  color: rgb(235, 6, 132);
+  !important;
 }
 
 main {
