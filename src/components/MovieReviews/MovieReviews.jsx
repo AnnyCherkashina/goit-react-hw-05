@@ -7,19 +7,24 @@ import s from "./MovieReviews.module.css";
 const MovieReviews = () => {
     const { movieId } = useParams();
     const [reviews, setReviews] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetchMovieReviews(movieId)
-            .then((data) => {
+        const getMovieReviews = async () => {
+            setIsLoading(true);
+            try {
+                const data = await fetchMovieReviews(movieId);
                 setReviews(data);
+                setError(null);
+            } catch (error) {
+                setError("Failed to fetch reviews");
+            } finally {
                 setIsLoading(false);
-            })
-            .catch((error) => {
-                setError(error.message);
-                setIsLoading(false);
-            });
+            }
+        };
+
+        getMovieReviews();
     }, [movieId]);
 
     if (isLoading) {
@@ -27,11 +32,11 @@ const MovieReviews = () => {
     }
 
     if (error) {
-        return <p>Error: {error}</p>;
+        return <p className={s.error}>{error}</p>;
     }
 
     if (reviews && reviews.results.length === 0) {
-        return <h2>We not have any reviews for this movie</h2>;
+        return <h2>We do not have any reviews for this movie</h2>;
     }
 
     return (

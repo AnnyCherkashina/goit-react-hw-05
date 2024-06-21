@@ -10,15 +10,19 @@ const HomePage = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetchTrendingMovies()
-            .then((data) => {
+        const getTrendingMovies = async () => {
+            try {
+                const data = await fetchTrendingMovies();
                 setMovies(data.results);
+                setError(null);
+            } catch (error) {
+                setError("Failed to fetch trending movies");
+            } finally {
                 setIsLoading(false);
-            })
-            .catch((error) => {
-                setError(error.message);
-                setIsLoading(false);
-            });
+            }
+        };
+
+        getTrendingMovies();
     }, []);
 
     if (isLoading) {
@@ -26,7 +30,7 @@ const HomePage = () => {
     }
 
     if (error) {
-        return <p>Error: {error}</p>;
+        return <p className={s.error}>{error}</p>;
     }
 
     return (

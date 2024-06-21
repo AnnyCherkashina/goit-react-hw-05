@@ -16,9 +16,15 @@ const MoviesPage = () => {
         setIsLoading(true);
         try {
             const response = await fetchSearchMovies(query);
-            setMovies(response.results);
+            if (response.results.length === 0) {
+                setError("No movies found");
+                setMovies([]);
+            } else {
+                setMovies(response.results);
+                setError(null);
+            }
         } catch (error) {
-            setError(error.message);
+            setError("Failed to fetch movies");
         } finally {
             setIsLoading(false);
         }
@@ -35,8 +41,8 @@ const MoviesPage = () => {
         <div className={s.movies}>
             <SearchBar setUseSearchParams={setUseSearchParams} />
             {isLoading && <Loader />}
-            {error && <p>Error: {error}</p>}
-            <MovieList movies={movies} />
+            {error && <p className={s.error}>{error}</p>}
+            {!isLoading && !error && <MovieList movies={movies} />}
         </div>
     );
 };
